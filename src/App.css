@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,16 +12,19 @@ body {
 }
 
 .app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+  width: 100%;
 }
 
 .note-form {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 100%;
+  max-width: 600px;
   background-color: #1e1e1e;
   padding: 20px;
   border-radius: 8px;
@@ -53,11 +55,12 @@ body {
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .note-form button:hover {
   background-color: #444;
+  transform: scale(1.02);
 }
 
 /* Container for displaying notes */
@@ -99,17 +102,26 @@ body {
   color: #e0e0e0;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .note-item button:hover {
   color: #ff6b6b;
+  transform: scale(1.1);
 }
 
-@media (min-width: 600px) {
-  .app-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+@media (max-width: 768px) {
+  .note-form {
+    max-width: 100%;
+    margin: 0 10px;
+  }
+  
+  .notes-container {
+    padding: 10px;
+  }
+  
+  .note-item {
+    width: 100%;
+    margin: 10px 0;
   }
 }
